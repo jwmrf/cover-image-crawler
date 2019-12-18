@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jwmrf/-cover-image-crawler.git"
+    "url": "git+https://github.com/jwmrf/cover-image-crawler.git"
   },
   "dependencies": {
     "@types/cheerio": "^0.22.13",
@@ -28,7 +28,7 @@
   "author": "Wilson Filho",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jwmrf/-cover-image-crawler/issues"
+    "url": "https://github.com/jwmrf/cover-image-crawler/issues"
   },
-  "homepage": "https://github.com/jwmrf/-cover-image-crawler#readme"
+  "homepage": "https://github.com/jwmrf/cover-image-crawler#readme"
 }

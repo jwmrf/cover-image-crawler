@@ -4,20 +4,20 @@ var jQuery = require('cheerio');
 var sizeOf = require('image-size');
 var http = require('https');
 
-
 class ImageCrawler {
   constructor() {
     this._id = ""
   }
 
-  //Método inicial que recebe a url do website.
   async start(req, res) {
-      console.log(req)
     var retorno = await this.TakeImages(req);
-    return retorno;
+    if (res) {
+      res(null, retorno);
+    } else {
+      return retorno;
+    }
   }
 
-  //Responsável por verificar se o SRC da tag imagem é um endereço http.
   TrataUrl(url) {
     return new Promise(function (resolve, reject) {
       if (url == undefined) {
@@ -35,13 +35,13 @@ class ImageCrawler {
       let maior = 0;
       let numero = site('img').length;
       if (undefined == site('img').last().attr('src')) {
-        listaVertical, lista.unshift("Erro, tente outra url");
+        listaVertical, lista.unshift("");
       }
       if (numero == 0) {
         resolve(lista[0])
       }
 
-
+      var promises = [];
       site('img').each(async function (index, value) {
         var imagem = site(this);
         let verifica = await new ImageCrawler().TrataUrl(imagem.attr('src'));
@@ -56,19 +56,18 @@ class ImageCrawler {
             } else if (tamanho.width < tamanho.height && tamanho.type != 'gif') {
               listaVertical.unshift(imagem.attr('src'));
             }
+            promises.push(tamanho)
           }
         }
-        // Quando a imagem do 'Each' for a última da página, ele dispara o timer de 2 segundos para retorno
-        if (imagem.attr('src') == site('img').last().attr('src') && numero == index + 1) {
-          setTimeout(async function () {
-            if (lista[0] != "Erro, tente outra url") {
-              resolve(lista[0]);
-            } else {
-              resolve(listaVertical[0]);
-            }
-          }, 1000);
-        }
       });
+
+      Promise.all(promises).then(function (values) {
+        setTimeout(function () {
+          resolve(lista[0])
+
+        }, 1000)
+      }
+      ).catch()
     });
   }
 
@@ -79,7 +78,7 @@ class ImageCrawler {
 
         request({ method: 'GET', url: url, headers: { 'User-Agent': 'curl/7.47.0' } }, async function (erro, resposta, body) {
           if (erro) {
-            resolve("Erro, tente outra url");
+            resolve("");
             console.log(erro);
           } else {
             var site = jQuery.load(body);
@@ -88,7 +87,7 @@ class ImageCrawler {
           }
         });
       } else {
-        resolve("Erro, tente outra url");
+        resolve("");
       }
     });
   }
@@ -101,9 +100,9 @@ class ImageCrawler {
           chunks.push(chunk);
         }).on('end', function () {
           var buffer = Buffer.concat(chunks);
-          try{
+          try {
             resolve(sizeOf(buffer));
-          }catch(erro){
+          } catch (erro) {
             resolve(undefined)
           }
         });
