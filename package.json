@@ -1,0 +1,34 @@
+{
+  "name": "cover-image-crawler",
+  "version": "1.0.0",
+  "description": "Capture the mais image of url's, worken with various sites of notices and videos(thumbnail)\u001b[D\u001b[C.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwmrf/-cover-image-crawler.git"
+  },
+  "dependencies": {
+    "@types/cheerio": "^0.22.13",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "image-size": "^0.7.4",
+    "request": "^2.88.0"
+  },
+  "keywords": [
+    "image",
+    "crawler",
+    "cover",
+    "thumb\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[3~\u001b[3~\u001b[\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D\u001b[Dcapture",
+    "url",
+    "link"
+  ],
+  "author": "Wilson Filho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jwmrf/-cover-image-crawler/issues"
+  },
+  "homepage": "https://github.com/jwmrf/-cover-image-crawler#readme"
+}
