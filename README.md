@@ -1,4 +1,6 @@
-Get the url of main image of page's using scraping in each img tag on the site and return the laggest image found.
+Get the url of main image of page's using scraping in each IMG tag on the site and return the larggest width image found.
+
+Usually it takes 1 second to return the result, if not found the return will be empty.
 
 ## Installation
 
@@ -29,4 +31,8 @@ async function test(){
     console.log(teste)
 }
 test()
+
+Open to contributions and improvements
 ```
+## Test now on Heroku : https://info-link-api.herokuapp.com/
+
