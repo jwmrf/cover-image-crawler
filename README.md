@@ -1,4 +1,4 @@
-Get the url of main image of page's.
+Get the url of main image of page's using scraping in each img tag on the site and return the laggest image found.
 
 ## Installation
 

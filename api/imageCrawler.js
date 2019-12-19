@@ -65,7 +65,7 @@ class ImageCrawler {
         setTimeout(function () {
           resolve(lista[0])
 
-        }, 1000)
+        }, 1200)
       }
       ).catch()
     });
