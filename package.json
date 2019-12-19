@@ -1,6 +1,6 @@
 {
   "name": "cover-image-crawler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Capture the mais image of url's, worken with various sites of notices and videos(thumbnail)\u001b[D\u001b[C.",
   "main": "index.js",
   "scripts": {
