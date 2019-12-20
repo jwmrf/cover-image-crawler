@@ -46,6 +46,7 @@ class ImageCrawler {
         var imagem = site(this);
         let verifica = await new ImageCrawler().TrataUrl(imagem.attr('src'));
         if (verifica >= 0) {
+          promises.push(new ImageCrawler().TakeSize(imagem.attr('src')))
           var tamanho = await new ImageCrawler().TakeSize(imagem.attr('src'));
           if (tamanho != undefined) {
             if (tamanho.width > tamanho.height && tamanho.type != 'gif') {
@@ -56,18 +57,21 @@ class ImageCrawler {
             } else if (tamanho.width < tamanho.height && tamanho.type != 'gif') {
               listaVertical.unshift(imagem.attr('src'));
             }
-            promises.push(tamanho)
           }
         }
+        if (imagem.attr('src') == site('img').last().attr('src') && numero == index + 1) {
+          Promise.all(promises).then(function (values) {
+            setTimeout(function () {
+              if (lista[0] != "") {
+                resolve(lista[0]);
+              } else {
+                resolve(listaVertical[0]);
+              }
+            }, 1000)
+          }
+          ).catch(err => resolve(""))
+        }
       });
-
-      Promise.all(promises).then(function (values) {
-        setTimeout(function () {
-          resolve(lista[0])
-
-        }, 1200)
-      }
-      ).catch()
     });
   }
 
@@ -79,7 +83,6 @@ class ImageCrawler {
         request({ method: 'GET', url: url, headers: { 'User-Agent': 'curl/7.47.0' } }, async function (erro, resposta, body) {
           if (erro) {
             resolve("");
-            console.log(erro);
           } else {
             var site = jQuery.load(body);
             var maiorImagem = await new ImageCrawler().Requesta(site);
