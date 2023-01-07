@@ -1,6 +1,6 @@
 # cover-image-crawler 
 
-[![npm package](https://nodei.co/npm/cover-image-crawler.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm//cover-image-crawle/)
+[![npm package](https://nodei.co/npm/cover-image-crawler.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cover-image-crawle/)
 
 [![NPM download][download-image]][download-url]
 [![Package Quality][quality-image]][quality-url]
