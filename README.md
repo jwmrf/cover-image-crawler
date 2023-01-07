@@ -1,5 +1,15 @@
 # cover-image-crawler 
 
+[![npm package](https://nodei.co/npm/cover-image-crawler.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm//cover-image-crawle/)
+
+[![NPM download][download-image]][download-url]
+[![Package Quality][quality-image]][quality-url]
+
+[quality-image]: https://packagequality.com/shield/cover-image-crawler.svg
+[quality-url]: https://packagequality.com/#?package=cover-image-crawler
+[download-image]: https://img.shields.io/npm/dm/cover-image-crawler.svg?style=flat-square
+[download-url]: https://npmjs.org/package/cover-image-crawler
+
 Get the url of main image of page's using scraping in each IMG tag on the site and return the largest image found.
 
 Usually it takes 1 second to return the result, if not found the return will be empty.
