@@ -25,9 +25,9 @@ npm install cover-image-crawler
 ```
 const imageCrawler = require('cover-image-crawler');
 
-imageCrawler.capture('https://www.diariodepernambuco.com.br/noticia/viver/2019/07/vintage-culture-e-mais-cinco-atracoes-em-festival-eletronico-no-recife.html', function(err,url){
+imageCrawler.capture('https://www.diariodepernambuco.com.br/noticia/viver/2019/07/vintage-culture-e-mais-cinco-atracoes-em-festival-eletronico-no-recife.html', function(err, image_url){
   if(!err){
-    console.log(image);
+    console.log(image_url);
   }
 })
 ```
@@ -55,7 +55,7 @@ Open to contributions and improvements
 * https://www.bbc.com/news/
 * ...
 
-### Test now on Heroku : https://info-link-api.herokuapp.com/
+### Test now on Vercel : https://info-link-node-api.vercel.app/
 
 ### Work for future versions: 
 
